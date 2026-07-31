@@ -125,6 +125,11 @@ function App() {
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: reducedMotion ? 0 : 0.55 }}
             >
+              <div className="note-petals" aria-hidden="true">
+                {Array.from({ length: 12 }, (_, index) => (
+                  <span className={`note-petal note-petal-${index + 1}`} key={index} />
+                ))}
+              </div>
               <span className="note-kicker">One more thing</span>
               <h2>There&apos;s a note tucked beneath the petals.</h2>
               <button
