@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import confetti from 'canvas-confetti'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Heart, RotateCcw, Sparkles } from 'lucide-react'
+import MemoryCollage from './components/MemoryCollage.jsx'
 import SunflowerScene from './components/SunflowerScene.jsx'
 import { note } from './content/message.js'
 import './App.css'
@@ -110,6 +111,8 @@ function App() {
           </p>
         </div>
       </section>
+
+      <MemoryCollage reducedMotion={reducedMotion} />
 
       <section className="note-section" aria-label="A special note">
         <AnimatePresence mode="wait">

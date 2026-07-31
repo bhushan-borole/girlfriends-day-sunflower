@@ -228,6 +228,237 @@ h1 span {
   transform: translateY(0);
 }
 
+.memories {
+  position: relative;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 100px 0 70px;
+}
+
+.memories::before {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  width: min(96vw, 1040px);
+  height: 74%;
+  border: 1px solid var(--cp-border);
+  border-radius: 50%;
+  content: "";
+  opacity: 0.52;
+  pointer-events: none;
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.memories-heading {
+  position: relative;
+  z-index: 5;
+  max-width: 700px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.memory-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--cp-accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.memories-heading h2 {
+  margin-bottom: 18px;
+  color: var(--cp-text);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.memories-heading p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--cp-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.collage-canvas {
+  position: relative;
+  height: 820px;
+  margin-top: 6px;
+}
+
+.memory-slot {
+  position: absolute;
+  z-index: 2;
+}
+
+.memory-night {
+  top: 170px;
+  left: calc(50% - 430px);
+  width: 310px;
+}
+
+.memory-walk {
+  z-index: 3;
+  top: 68px;
+  left: 50%;
+  width: 355px;
+  transform: translateX(-50%);
+}
+
+.memory-cozy {
+  top: 210px;
+  left: calc(50% + 128px);
+  width: 330px;
+}
+
+.memory-card {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  padding: 12px 12px 54px;
+  background: var(--cp-surface);
+  box-shadow:
+    0 0 2px var(--cp-border),
+    0 16px 40px var(--cp-highlight);
+  cursor: default;
+  transform-origin: 50% 75%;
+  will-change: transform;
+}
+
+.memory-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--cp-border);
+  border-radius: 0.625rem;
+  background: var(--cp-surface-soft);
+}
+
+.memory-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, var(--cp-sheen), transparent 35%, var(--cp-accent-soft));
+  content: "";
+  pointer-events: none;
+}
+
+.memory-image-wrap img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 14;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+  transition: filter 300ms ease, transform 700ms ease;
+}
+
+.memory-night img {
+  object-position: 50% 47%;
+}
+
+.memory-cozy img {
+  object-position: 50% 45%;
+}
+
+.memory-walk img {
+  object-position: 50% 52%;
+}
+
+.memory-card:hover img {
+  filter: saturate(1.08) contrast(1.02);
+  transform: scale(1.025);
+}
+
+.memory-card figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 15px;
+  left: 18px;
+  overflow: hidden;
+  color: var(--cp-text-muted);
+  font-size: 0.83rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photo-tape {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 76px;
+  height: 32px;
+  border: 1px solid var(--cp-border);
+  background: var(--cp-panel);
+  opacity: 0.88;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.memory-cozy .photo-tape {
+  transform: translateX(-50%) rotate(4deg);
+}
+
+.memory-glow {
+  position: absolute;
+  right: -30%;
+  bottom: -25%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--cp-accent);
+  filter: blur(3rem);
+  opacity: 0.12;
+}
+
+.collage-thread {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid var(--cp-accent);
+  border-radius: 50%;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.thread-one {
+  top: 130px;
+  left: 7%;
+  width: 86%;
+  height: 420px;
+  transform: rotate(7deg);
+}
+
+.thread-two {
+  top: 220px;
+  left: 19%;
+  width: 64%;
+  height: 350px;
+  transform: rotate(-8deg);
+}
+
+.collage-whisper {
+  position: absolute;
+  z-index: 4;
+  right: 8%;
+  bottom: 72px;
+  max-width: 210px;
+  margin: 0;
+  color: var(--cp-accent);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: center;
+  transform: rotate(-4deg);
+}
+
+.collage-whisper span {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+
 .note-section {
   position: relative;
   width: min(860px, calc(100% - 40px));
@@ -428,6 +659,52 @@ footer {
   .sunflower-wrap {
     width: min(100%, 520px);
   }
+
+  .memories {
+    padding-top: 84px;
+  }
+
+  .collage-canvas {
+    height: auto;
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 38px 22px;
+  }
+
+  .memory-slot {
+    position: relative;
+    inset: auto;
+    width: auto;
+    transform: none;
+  }
+
+  .memory-walk {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: min(58vw, 390px);
+    justify-self: center;
+  }
+
+  .memory-night,
+  .memory-cozy {
+    width: min(100%, 330px);
+    justify-self: center;
+  }
+
+  .collage-thread {
+    display: none;
+  }
+
+  .collage-whisper {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    grid-column: 1 / -1;
+    max-width: none;
+    padding-top: 10px;
+    transform: none;
+  }
 }
 
 @media (max-width: 520px) {
@@ -464,6 +741,44 @@ footer {
 
   .bloom-caption {
     margin-top: -18px;
+  }
+
+  .memories {
+    width: min(100% - 28px, 1180px);
+    padding: 70px 0 28px;
+  }
+
+  .memories-heading {
+    margin-bottom: 42px;
+  }
+
+  .memories-heading h2 {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+
+  .collage-canvas {
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+  }
+
+  .memory-slot,
+  .memory-walk {
+    width: min(84vw, 340px);
+  }
+
+  .memory-night {
+    transform: translateX(-7px);
+  }
+
+  .memory-cozy {
+    transform: translateX(8px);
+  }
+
+  .memory-card figcaption {
+    font-size: 0.78rem;
   }
 
   .note-section {
