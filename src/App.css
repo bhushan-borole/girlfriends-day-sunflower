@@ -520,9 +520,17 @@ h1 span {
 .note-card h2 {
   margin-bottom: 24px;
   color: var(--cp-text);
-  font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: -0.045em;
   line-height: 1.05;
+}
+
+.note-invitation h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.note-card h2 {
+  font-size: clamp(1.75rem, 3.8vw, 2.75rem);
+  line-height: 1.12;
 }
 
 .primary-button {
