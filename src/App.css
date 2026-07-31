@@ -285,7 +285,7 @@ h1 span {
 
 .collage-canvas {
   position: relative;
-  height: 820px;
+  height: 900px;
   margin-top: 6px;
 }
 
@@ -441,16 +441,17 @@ h1 span {
 .collage-whisper {
   position: absolute;
   z-index: 4;
-  right: 8%;
-  bottom: 72px;
-  max-width: 210px;
+  bottom: 18px;
+  left: 50%;
+  width: max-content;
+  max-width: min(90%, 360px);
   margin: 0;
   color: var(--cp-accent);
   font-size: 1rem;
   font-weight: 650;
   line-height: 1.5;
   text-align: center;
-  transform: rotate(-4deg);
+  transform: translateX(-50%) rotate(-2deg);
 }
 
 .collage-whisper span {
@@ -700,7 +701,9 @@ footer {
     position: relative;
     right: auto;
     bottom: auto;
+    left: auto;
     grid-column: 1 / -1;
+    width: auto;
     max-width: none;
     padding-top: 10px;
     transform: none;
